@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OMDB APP</title>
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  </head>
+  <body>
+    <div data-role="page" id="home">
+      <div data-role="header" data-theme="b">
+        <h1>Movie Listing</h1>
+      </div>
+      <div data-role="content">
+        <form id="searchForm">
+          <div class="ui-field-contain">
+            <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="Search Movie.."
+            />
+          </div>
+        </form>
+        <br>
+        <ul id="movieList" data-role="listview"></ul>
+      </div>
+      <div data-role="footer" style="text-align: center" data-theme="b">
+        <p>OMDB App</p>
+      </div>
+    </div>
+    <script src="./js/api.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+<!-- 
+Experiment 4A
+ Overview of the Project
+This is a web application using jQuery Mobile that fetches movie data from the OMDb API (Open Movie Database). It has:
+•	A search page (index.html) to look for movies.
+•	A details page (movie.html) to show information about a selected movie.
+API used:
+OMDb API: http://www.omdbapi.com
+API Key used: 7d19230d
+________________________________________
+🗂 File-wise Breakdown
+1. index.html – Movie Search Page
+🔧 Features
+•	Input field to search for a movie.
+•	Results shown as a list of movies with title, year, and poster.
+•	Clicking on a movie shows its details.
+🧠 Key Concepts
+•	jQuery Mobile: Used for mobile-friendly UI (data-role="page", listview, etc.).
+•	Form submission is handled using jQuery, and AJAX fetches movie data from OMDb API.
+________________________________________
+2. movie.html – Movie Details Page
+🔧 Features
+•	Shows selected movie’s detailed information: rating, release date, IMDb rating, actors, and director.
+•	Button to go back to search.
+🧠 Key Concepts
+•	It loads data dynamically based on the movie ID stored in sessionStorage.
+•	Also uses jQuery Mobile for layout.
+________________________________________
+3. api.js – Core JavaScript Logic
+This is the file where all logic resides. Here's a breakdown of how it works:
+▶ $(document).ready(...)
+•	Binds an event to the form submission.
+•	When you search a movie, it:
+o	Prevents default form submission (e.preventDefault()).
+o	Calls getMovies(searchText) to fetch movie list.
+▶ getMovies(searchText)
+•	Sends an AJAX request to OMDb API:
+http://www.omdbapi.com?apikey=7d19230d&s=${searchText}
+•	s= parameter is for searching movie titles.
+•	Loops through the results and dynamically builds a list (<li>) of movies.
+▶ movieClick(imdbID)
+•	Saves the selected movie’s ID in sessionStorage.
+•	Redirects to movie.html using jQuery Mobile's changePage().
+▶ $(document).on("pagebeforeshow", "#movie", ...)
+•	Before showing the movie detail page:
+o	Retrieves the movie ID from sessionStorage.
+o	Calls getMovieDetails(movieId).
+▶ getMovieDetails(movieId)
+•	Sends another AJAX request:
+http://www.omdbapi.com?apikey=7d19230d&i=${movieId}
+•	i= is for exact movie by IMDb ID.
+•	Displays:
+o	Title & Poster
+o	Rated, Released, IMDb Rating, Actors, Director
+________________________________________
+🧠 Concepts Covered
+Concept	Explanation
+AJAX	Used to asynchronously fetch data from OMDb API.
+jQuery Mobile	For responsive UI and mobile-friendly components.
+Session Storage	Stores movie ID temporarily between pages.
+JavaScript Events	Form submission, click handlers, page lifecycle events.
+Templating in JS	Uses template literals to insert dynamic data into HTML.
+REST API (OMDb)	Uses HTTP GET requests with query params to fetch data.
+
+
+
+	
+ 
+1. data-role="page"
+Used in jQuery Mobile to define a single page/screen of the app.
+2. listview("refresh")
+Updates the list view styling after adding items dynamically.
+3. <meta name="viewport">
+Makes the page responsive and fit properly on mobile screens.
+________________________________________
+✅ JavaScript / jQuery
+4. e.preventDefault()
+Stops the form from reloading the page on submit.
+5. sessionStorage vs localStorage
+•	sessionStorage: Temporary (cleared on tab close)
+•	localStorage: Permanent (stays until manually cleared)
+6. AJAX in this project
+Used to fetch movie data from OMDb API without reloading the page.
+________________________________________
+✅ API & Backend
+7. OMDb API
+Free API to get movie info. Used to search movies and get full details.
+8. Query Parameters (s=, i=)
+•	s= → search by title
+•	i= → get by IMDb ID
+9. Handling API response
+Get JSON data and use JavaScript to show it on the page.
+________________________________________
+✅ General Web App
+10. On movie click
+Stores movieId in sessionStorage and opens the detail page.
+11. Passing data between pages
+Uses sessionStorage to store and retrieve movie ID.
+12. pagebeforeshow
+Runs just before the page is shown — used to load movie details.
+ -->

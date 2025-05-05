@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exam Admin Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      display: flex;
+      min-height: 100vh;
+      background-color: #f1f3f5;
+    }
+    .sidebar {
+      width: 250px;
+      background-color: #2c3e50;
+      color: white;
+      flex-shrink: 0;
+    }
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      padding: 15px;
+      display: block;
+    }
+    .sidebar a:hover {
+      background-color: #34495e;
+    }
+    .main-content {
+      flex-grow: 1;
+    }
+    .card {
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar d-flex flex-column p-3">
+    <h4 class="text-center">Exam Admin</h4>
+    <a href="#">Dashboard</a>
+    <a href="#">Students</a>
+    <a href="#">Exams</a>
+    <a href="#">Results</a>
+    <a href="#">Schedule</a>
+    <a href="#">Settings</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4">
+      <div class="container-fluid">
+        <span class="navbar-brand">Welcome, Exam Admin</span>
+      </div>
+    </nav>
+
+    <!-- Statistics Cards -->
+    <div class="container mt-4">
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="card text-white bg-primary">
+            <div class="card-body">
+              <h5 class="card-title">Registered Students</h5>
+              <p class="card-text fs-4">1,025</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card text-white bg-success">
+            <div class="card-body">
+              <h5 class="card-title">Exams Conducted</h5>
+              <p class="card-text fs-4">56</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card text-white bg-warning">
+            <div class="card-body">
+              <h5 class="card-title">Pending Results</h5>
+              <p class="card-text fs-4">12</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card text-white bg-danger">
+            <div class="card-body">
+              <h5 class="card-title">Upcoming Exams</h5>
+              <p class="card-text fs-4">8</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- 
+Experiment 1________________________________________
+🟩 1. <head> Section
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+•	Loads Bootstrap v5.3.3 from CDN (Content Delivery Network).
+•	Gives access to all Bootstrap features like grid, buttons, cards, etc.
+________________________________________
+🎨 Custom CSS Styling (inside <style>)
+body {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+•	display: flex → puts sidebar and content side-by-side
+•	min-height: 100vh → ensures full screen height
+•	background-color: #f5f5f5 → light gray background
+.sidebar {
+  width: 250px;
+  background-color: #212529;
+  color: white;
+  flex-shrink: 0;
+}
+•	Fixed width sidebar
+•	Dark background: #212529 (similar to Bootstrap’s bg-dark)
+•	flex-shrink: 0 → Sidebar won't shrink if the screen shrinks
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+}
+.sidebar a:hover {
+  background-color: #343a40;
+}
+•	Makes each link in the sidebar block-level and styled
+•	Hover effect with a slightly lighter color (#343a40)
+.main-content {
+  flex-grow: 1;
+}
+•	Takes up all the space remaining after sidebar
+•	Ensures responsive layout
+.card {
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+•	Adds a light shadow to cards to lift them visually
+________________________________________
+🟪 2. Sidebar (Left Panel)
+<div class="sidebar d-flex flex-column p-3">
+Bootstrap Classes:
+•	d-flex flex-column → vertical stacking of elements
+•	p-3 → padding: 1rem on all sides
+<h3 class="text-center">E-Commerce</h3>
+•	text-center → centers the heading inside the sidebar
+<a href="#">Dashboard</a>
+<a href="#">Products</a>
+<a href="#">Orders</a>
+<a href="#">Customers</a>
+<a href="#">Reports</a>
+<a href="#">Settings</a>
+•	Sidebar links with no Bootstrap class (but styled via custom CSS)
+________________________________________
+🟨 3. Navbar (Top Bar)
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4">
+Bootstrap Classes:
+•	navbar → base class for responsive navbar
+•	navbar-expand-lg → collapses below large (lg) screen size
+•	navbar-light → light-colored text (for use on light backgrounds)
+•	bg-white → white background
+•	shadow-sm → small shadow for elevation
+•	px-4 → padding x-axis (left and right): 1.5rem
+<span class="navbar-brand">Welcome, Admin</span>
+•	navbar-brand → aligns properly in navbar and styled bold
+________________________________________
+🟦 4. Stats Cards (Main Dashboard Area)
+<div class="container mt-4">
+•	container → adds horizontal padding & centers content
+•	mt-4 → margin top: 1.5rem
+<div class="row g-4">
+•	row → Bootstrap grid row
+•	g-4 → gap between columns and rows = 1.5rem
+________________________________________
+🟥 Each Statistic Card
+<div class="col-md-3">
+•	col-md-3 → 4 cards in a row on medium (≥768px) screens
+<div class="card text-white bg-primary">
+Bootstrap Classes:
+•	card → Bootstrap card component
+•	text-white → white text
+•	bg-primary → Bootstrap’s primary blue background color
+<div class="card-body">
+•	card-body → required wrapper inside card for spacing
+<h5 class="card-title">Total Sales</h5>
+<p class="card-text fs-4">$125,000</p>
+Bootstrap Classes:
+•	card-title → bold, slightly larger heading
+•	card-text → regular paragraph
+•	fs-4 → font-size = 1.5rem (4 level size)
+________________________________________
+Great list of questions! Here's a refined set of viva questions and ideal answers categorized for your practical exam. These are focused, clear, and will help you respond confidently.
+________________________________________
+✅ POSSIBLE VIVA QUESTIONS & ANSWERS
+________________________________________
+🔧 General Bootstrap / Project Understanding
+1. What is Bootstrap? What version are you using?
+Answer:
+Bootstrap is a popular open-source front-end framework that helps design responsive and mobile-first websites quickly. We are using Bootstrap version 5.3.3 (included via CDN).
+________________________________________
+2. How does the Bootstrap grid system work?
+Answer:
+The Bootstrap grid system divides the page into 12 equal columns. We use classes like col-md-3 to define how many columns a div will take on medium and larger screens. The layout automatically adjusts based on screen size.
+________________________________________
+3. What are the advantages of using cards?
+Answer:
+Cards provide a flexible and responsive container for displaying content like text, images, and links. They come with padding, shadows, and headers, making them perfect for statistics and dashboard widgets.
+________________________________________
+4. How is responsiveness handled here?
+Answer:
+Responsiveness is achieved through:
+•	Bootstrap grid classes (col-md-3, row, container)
+•	Media-query-aware utilities
+•	Flexbox layout (display: flex)
+•	The design automatically adapts to screen size and stacks elements vertically on smaller devices.
+________________________________________
+🧠 HTML / CSS Specific
+5. What does flex-grow: 1 do in .main-content?
+Answer:
+It tells the main content area to take up all the remaining space in the flex container (after the sidebar). This ensures the content expands to fill the horizontal space.
+________________________________________
+6. What is the purpose of box-shadow in .card?
+Answer:
+box-shadow adds a subtle shadow behind the card to create depth and make the card appear slightly lifted. It improves visual hierarchy and modernizes the UI.
+________________________________________
+7. How would you make the sidebar collapsible?
+Answer:
+You can make the sidebar collapsible using:
+•	Bootstrap’s Collapse component
+•	A toggle button (data-bs-toggle="collapse")
+•	Or using JavaScript/jQuery to add/remove classes that hide/show the sidebar dynamically
+________________________________________
+8. Explain the difference between class and id in HTML.
+Answer:
+•	class: Can be used multiple times across different elements. Ideal for applying the same style or behavior.
+•	id: Should be unique to one element. Used for targeting specific elements via CSS or JavaScript.
+Example:
+<div class="card"></div>   <!-- Reusable -->
+<div id="header"></div>   <!-- Unique -->
+________________________________________
+➕ Bonus (If they go deeper)
+9. What does col-md-3 mean?
+Answer:
+It means the element will occupy 3 out of 12 columns on medium and larger screens. On smaller screens, it stacks vertically by default.
+________________________________________
+10. What are some other Bootstrap utility classes you used?
+Answer:
+•	p-3, px-4, mt-4, g-4 → for spacing
+•	bg-primary, bg-success → for background colors
+•	text-white → for text color
+•	shadow-sm → for subtle shadow
+•	d-flex, flex-column → for flexbox layout -->
+
+
+

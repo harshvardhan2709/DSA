@@ -1,0 +1,11 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.hero-section {
+  background: url('https://source.unsplash.com/1600x600/?solar,renewable') center/cover no-repeat;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; }
+        .container { max-width: 400px; margin-top: 50px; }
+        .card { border-radius: 10px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card p-4">
+        <h3 class="text-center">Register</h3>
+        <form id="registrationForm">
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Register</button>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+Experiment 2
+
+Aim
+To design a user registration form using HTML, CSS, Bootstrap, and JavaScript that:
+•	Takes user input
+•	Saves data in localStorage
+•	Sends data to a server using the AJAX POST method
+•	Displays submitted data on a new page
+________________________________________
+Objective
+•	Learn how to collect form data in JavaScript
+•	Use localStorage to persist data
+•	Simulate a backend call with fetch()
+•	Display stored user data dynamically on another HTML page
+________________________________________
+ Theory & Concepts Used
+1. HTML Forms
+Forms collect input from users via <input> fields.
+2. Bootstrap (v5.3.0)
+Used for responsive and styled UI using classes like:
+•	container, card, form-control, btn, text-center, table, table-bordered, table-striped
+3. CSS
+Custom styles:
+•	box-shadow, border-radius → add aesthetics
+•	background-color → for visual clarity
+4. JavaScript
+•	Event handling (submit event)
+•	DOM manipulation
+•	LocalStorage for storing user data
+•	fetch() to simulate AJAX POST call
+5. localStorage
+Used to store the registered user objects persistently in the browser.
+6. AJAX POST Request
+Used fetch() to simulate data submission to https://jsonplaceholder.typicode.com/users
+
+
+
+Here are simple and clear answers to the possible viva questions based on your project:
+________________________________________
+🔧 General
+1. What is the use of localStorage?
+It stores data in the browser that stays even after the page is reloaded or the browser is closed.
+2. What is an AJAX POST request?
+It's a way to send data to a server in the background without reloading the page, usually using fetch() or XMLHttpRequest.
+3. Why do we use fetch()?
+To make network requests (GET, POST, etc.) from JavaScript to servers or APIs, and handle the response asynchronously.
+4. What is the difference between localStorage and sessionStorage?
+•	localStorage: Data persists even after closing the browser.
+•	sessionStorage: Data is cleared when the tab or browser is closed.
+________________________________________
+💻 HTML / CSS / JavaScript
+5. What does event.preventDefault() do?
+It stops the default action of a form (like reloading the page when submitted).
+6. How do you retrieve values from input fields in JavaScript?
+By using document.getElementById("id").value.
+7. How is user data shown on another page?
+Data is saved in localStorage on one page and read/displayed using JavaScript on another page.
+8. What is the structure of a JSON object?
+It’s a collection of key-value pairs written in { "key": "value" } format. Example:
+{ "name": "John", "email": "john@example.com" }
+9. What is the purpose of JSON.stringify() and JSON.parse()?
+•	JSON.stringify(): Converts a JavaScript object to a JSON string (for storage).
+•	JSON.parse(): Converts a JSON string back to a JavaScript object (for use).
+10. Can localStorage store complex objects directly?
+No. It only stores strings. You must use JSON.stringify() to store and JSON.parse() to retrieve complex data like objects or arrays.
+________________________________________
+🎨 Bootstrap
+11. What Bootstrap class is used for responsive tables?
+Use table-responsive to make a table scrollable on smaller screens.
+12. What does container, card, and form-control do?
+•	container: Adds padding and centers content nicely on the page.
+•	card: Creates a box with padding and shadow, often used for grouping content.
+•	form-control: Styles input fields for a clean, responsive look.
+ -->

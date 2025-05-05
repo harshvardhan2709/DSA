@@ -1,0 +1,129 @@
+Sure! Here's the **complete step-by-step organized command list** for your Cyber Security experiment on **Packet Sniffing using Scapy and Wireshark**, including optional Snort handling.
+
+---
+
+## 🔧 STEP 1: Update Your System
+```bash
+sudo apt update
+```
+
+---
+
+## 🐍 STEP 2: Install Required Packages
+```bash
+sudo apt install python3-pip python3-dev libpcap0.8-dev
+sudo pip3 install scapy
+```
+
+✅ *Optional: Check Scapy version*
+```bash
+python3 -c "import scapy; print(scapy.__version__)"
+```
+
+---
+
+## 🧪 STEP 3: Install and Configure Wireshark (GUI Analyzer)
+```bash
+sudo apt install wireshark
+wireshark
+```
+
+---
+
+## 🚨 (Optional) STEP 4: Snort Setup
+
+If you see the Snort config screen:
+- Run this to check your active interface:
+
+```bash
+ip a
+```
+- Identify your active network interface (e.g., `enp3s0`, `eth0`, etc.)
+- Enter that interface when prompted and continue.
+
+If errors occur, fix or remove Snort:
+```bash
+sudo apt --fix-broken install         # Attempt to fix broken setup
+sudo apt remove --purge snort         # OR remove Snort if not needed
+sudo apt autoremove                   # Clean unused dependencies
+```
+
+---
+
+## 🐚 STEP 5: Start Scapy (Packet Sniffing Tool)
+```bash
+sudo scapy
+```
+
+---
+
+## 🧪 STEP 6: Scapy Commands to Capture and Analyze Packets
+
+### a. Capture live packets (infinite, until Ctrl + C)
+```python
+capture = sniff()
+capture.summary()
+```
+
+### b. Capture a fixed number of packets (e.g., 5)
+```python
+capture = sniff(count=5)
+capture.summary()
+```
+
+### c. Capture only TCP packets
+```python
+sniff(filter="tcp", count=5)
+```
+
+### d. List all available interfaces
+```python
+show_interfaces()
+```
+
+### e. Capture on a specific interface (e.g., enp3s0)
+```python
+sniff(iface="enp3s0", count=5)
+```
+
+### f. Live summary while capturing
+```python
+sniff(prn=lambda x:x.summary(), count=5)
+```
+
+---
+
+## 💾 STEP 7: Save and Load Captured Packets
+
+### Save capture to `.pcap` file
+```python
+wrpcap("siddhi.pcap", capture)
+```
+
+### Read packets from file
+```python
+sniff(offline="siddhi.pcap")
+```
+
+### Read with summary display
+```python
+sniff(offline="siddhi.pcap", prn=lambda x: x.summary())
+```
+
+---
+
+## 🧪 STEP 8: Analyze `.pcap` File in Wireshark
+From terminal:
+```bash
+wireshark siddhi.pcap
+```
+
+---
+
+## 🎯 Done!  
+You’ve now:
+- Installed tools
+- Captured network packets
+- Analyzed them in CLI and GUI (Wireshark)
+
+Would you like a **PDF report** or **Python script version** of this experiment?

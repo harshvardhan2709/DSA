@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solar Energy Solutions - India</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header with Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Solar India</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#offers">Offers</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section text-white text-center p-5">
+    <h1>Harness the Power of the Sun</h1>
+    <p>Leading Solar Energy Solutions in India</p>
+    <img src="https://source.unsplash.com/800x400/?solar,energy" class="img-fluid mt-3" alt="Solar Panel">
+  </header>
+
+  <!-- Services Section -->
+  <section id="services" class="container my-5">
+    <h2 class="text-center text-success mb-4">Our Solar Services</h2>
+    <div class="row">
+      <div class="col-md-4 text-center">
+        <img src="https://source.unsplash.com/200x150/?solar,home" class="img-thumbnail" alt="Residential">
+        <h5>Residential Installations</h5>
+        <p>Power your home with clean and affordable energy.</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="https://source.unsplash.com/200x150/?solar,industry" class="img-thumbnail" alt="Commercial">
+        <h5>Commercial Solutions</h5>
+        <p>Optimize energy costs for your business with solar.</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="https://source.unsplash.com/200x150/?solar,maintenance" class="img-thumbnail" alt="Maintenance">
+        <h5>Maintenance Services</h5>
+        <p>We offer lifetime support and system maintenance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offers Section with Button -->
+  <section id="offers" class="bg-light p-5 text-center">
+    <h2 class="text-success mb-4">Click to View Our Special Offers</h2>
+    <button class="btn btn-success" onclick="showOffers()">Show Offers & Charges</button>
+    <div id="offerDetails" class="mt-4 text-dark" style="display: none;">
+      <h4>Special Summer Offer 2025!</h4>
+      <ul class="list-unstyled">
+        <li>☀️ 3kW System: ₹1.5 Lakhs – Includes installation</li>
+        <li>☀️ 5kW System: ₹2.3 Lakhs – EMI options available</li>
+        <li>☀️ Maintenance Contract: ₹2,000/year</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact / Footer -->
+  <footer id="contact" class="bg-success text-white text-center p-4">
+    <p>📞 Contact us: +91 98765 43210 | ✉️ solarindia@example.com</p>
+    <p>&copy; 2025 Solar India. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+<!-- ✅ 2. Explanation for Viva
+🔹 Objective:
+Build a responsive webpage to showcase solar services and offers using HTML, CSS, Bootstrap, and JavaScript.
+
+✅ 3. Concepts Used
+✅ HTML
+Structured layout: navbar, hero, services, offers, and footer.
+
+Used semantic tags (<section>, <header>, <footer>).
+
+✅ CSS
+Custom background and font.
+
+Hero section background overlay for better readability.
+
+✅ Bootstrap
+Responsive grid system for layout (col-md-4).
+
+Components like navbar, buttons, container, and cards.
+
+Classes like text-center, bg-success, img-fluid for quick styling.
+
+✅ JavaScript
+Simple DOM manipulation with onclick event to toggle offer visibility.
+
+🧠 Viva Key Points
+Question	Point to Mention
+Why Bootstrap?	For quick responsive design without writing much CSS manually.
+How is responsiveness handled?	Bootstrap grid system (col-md-4) and img-fluid.
+Why use JavaScript here?	To show/hide offers dynamically using a button click.
+How did you choose colors?	Green (success) reflects environment and eco-friendliness. White for text contrast.
+How is navigation implemented?	Using Bootstrap navbar with responsive toggler.
+Any accessibility features?	Semantic tags improve screen reader support; buttons are keyboard accessible. -->
+
+
+
+<!-- 
+| **Component**        | **Bootstrap Class/Tag**                       | **Purpose**                   |
+| -------------------- | --------------------------------------------- | ----------------------------- |
+| Navbar               | `.navbar`, `.navbar-expand-lg`, `.bg-success` | Responsive site navigation    |
+| Grid System          | `.row`, `.col-md-4`                           | Service section layout        |
+| Buttons              | `.btn`, `.btn-success`                        | Interactivity (toggle offers) |
+| Images               | `.img-fluid`, `.img-thumbnail`                | Responsive and styled images  |
+| Typography Utilities | `.text-center`, `.text-success`               | Headings and text styling     |
+| Spacing              | `.my-5`, `.p-5`, `.container`                 | Margin and padding            |
+| Collapse Toggler     | `.navbar-toggler`, `data-bs-toggle`           | Mobile navbar toggle          | -->
+
+
+
+
+
+<!-- ## ✅ **Basic HTML & CSS Questions**
+
+### 1. **Q: What is the purpose of the `<nav>` tag in your project?**
+
+**A:** The `<nav>` tag defines a navigation section. I used it along with Bootstrap classes to create a responsive navbar that lets users jump to Services, Offers, and Contact sections easily.
+
+---
+
+### 2. **Q: Why did you use the `<section>` tag instead of `<div>`?**
+
+**A:** `<section>` is a semantic HTML5 tag that clearly defines content sections. It improves readability, SEO, and accessibility over generic `<div>` tags.
+
+---
+
+### 3. **Q: How did you make the website responsive?**
+
+**A:** I used Bootstrap's grid system (e.g., `col-md-4`) and responsive classes like `img-fluid` and `navbar-expand-lg`, which automatically adjust layout and elements based on screen size.
+
+---
+
+## ✅ **Bootstrap-Specific Viva Questions**
+
+### 4. **Q: Which Bootstrap components did you use?**
+
+**A:**
+
+* `Navbar`: for responsive navigation,
+* `Grid system`: to align services in columns,
+* `Buttons`: for interactive offers,
+* `Responsive images`: using `img-fluid`,
+* `Utility classes`: for margins, text color, alignment.
+
+---
+
+### 5. **Q: What is the difference between `container` and `container-fluid` in Bootstrap?**
+
+**A:** `container` provides a fixed-width layout with responsive breakpoints. `container-fluid` spans the entire width of the screen. I used `container` for consistent padding and alignment.
+
+---
+
+### 6. **Q: Why use `navbar-toggler` and `collapse`?**
+
+**A:** `navbar-toggler` is used to create a collapsible menu for small screens. It works with Bootstrap’s `collapse` component to show/hide the menu in mobile view.
+
+---
+
+## ✅ **JavaScript-Related Questions**
+
+### 7. **Q: What does your JavaScript function do?**
+
+**A:** It toggles the visibility of the offers section. When the "Show Offers" button is clicked, it displays or hides the pricing information using `display: block/none`.
+
+---
+
+### 8. **Q: Could you have done this with only CSS?**
+
+**A:** For simple toggling, yes—using CSS animations or `:target`. But JavaScript gives better control and can be extended for dynamic data or user interaction.
+
+---
+
+## ✅ **Styling & Design Questions**
+
+### 9. **Q: How did you choose colors and images?**
+
+**A:** I used green (`bg-success`) and white as they reflect eco-friendliness and cleanliness, suitable for renewable energy. Images are sourced from Unsplash using relevant solar keywords.
+
+---
+
+### 10. **Q: How does your layout adapt to different screen sizes?**
+
+**A:** Bootstrap's responsive grid and classes (e.g., `col-md-4`, `img-fluid`) ensure content stacks or shrinks based on the device size, making it fully mobile-friendly.
+
+---
+
+## ✅ **Conceptual Questions**
+
+### 11. **Q: What is semantic HTML and why is it important?**
+
+**A:** Semantic HTML uses tags that describe the meaning of content (like `<header>`, `<section>`, `<footer>`). It improves code readability, accessibility, and SEO.
+
+---
+
+### 12. **Q: What are the advantages of using Bootstrap in web development?**
+
+**A:**
+
+* Rapid development,
+* Built-in responsiveness,
+* Cross-browser compatibility,
+* Predefined styling and components.
+
+---
+
+### 13. **Q: What would you improve in this project if you had more time?**
+
+**A:**
+
+* Add a contact form,
+* Use animations for offer reveal,
+* Fetch offers dynamically from a backend or API,
+* Add accessibility features like ARIA labels. -->
+
+
+

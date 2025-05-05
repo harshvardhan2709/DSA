@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Food Listing (jQuery Mobile)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- jQuery Mobile CSS and JS -->
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  <style>
+    body {
+      background-color: #f5f5f5;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .food-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .food-title {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 4px;
+    }
+
+    .food-desc {
+      color: #777;
+      font-size: 0.9em;
+    }
+
+    .ui-content {
+      padding: 15px;
+    }
+
+    .popup-content h3 {
+      margin-top: 0;
+      color: #d35400;
+    }
+
+    .popup-content p {
+      margin: 6px 0;
+      font-size: 0.95em;
+    }
+
+    .ui-header, .ui-footer {
+      background-color: #2c3e50 !important;
+      color: white !important;
+    }
+
+    .ui-footer h4 {
+      margin: 0;
+    }
+
+    .ui-listview li {
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+<div data-role="page" id="home">
+
+  <!-- Header -->
+  <div data-role="header" data-position="fixed">
+    <h1>🍽 Foodie Menu</h1>
+  </div>
+
+  <!-- Content -->
+  <div data-role="content">
+
+    <!-- Search -->
+    <input id="search" data-type="search" placeholder="Search food items...">
+
+    <!-- Food List -->
+    <ul data-role="listview" data-filter="true" data-input="#search">
+
+      <!-- Pizza -->
+      <li>
+        <a href="#popupPizza" data-rel="popup" data-transition="pop">
+          <img src="https://source.unsplash.com/100x100/?pizza" class="food-img" alt="Pizza">
+          <h2 class="food-title">Pizza</h2>
+          <p class="food-desc">Cheesy tomato pizza with toppings</p>
+        </a>
+      </li>
+
+      <!-- Burger -->
+      <li>
+        <a href="#popupBurger" data-rel="popup" data-transition="pop">
+          <img src="https://source.unsplash.com/100x100/?burger" class="food-img" alt="Burger">
+          <h2 class="food-title">Burger</h2>
+          <p class="food-desc">Grilled patty with lettuce and cheese</p>
+        </a>
+      </li>
+
+      <!-- Ice Cream -->
+      <li>
+        <a href="#popupIceCream" data-rel="popup" data-transition="pop">
+          <img src="https://source.unsplash.com/100x100/?icecream" class="food-img" alt="Ice Cream">
+          <h2 class="food-title">Ice Cream</h2>
+          <p class="food-desc">Vanilla scoop with chocolate chips</p>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+
+  <!-- Footer -->
+  <div data-role="footer" data-position="fixed">
+    <h4>&copy; 2025 FoodieExpress</h4>
+  </div>
+
+  <!-- Popups -->
+
+  <div data-role="popup" id="popupPizza" class="ui-content popup-content" data-theme="a">
+    <h3>Pizza</h3>
+    <p><strong>Description:</strong> Delicious cheesy tomato pizza</p>
+    <p><strong>Toppings:</strong> Olives, Bell Peppers, Cheese</p>
+    <p><strong>Price:</strong> ₹250</p>
+  </div>
+
+  <div data-role="popup" id="popupBurger" class="ui-content popup-content" data-theme="a">
+    <h3>Burger</h3>
+    <p><strong>Description:</strong> Juicy grilled patty burger</p>
+    <p><strong>Toppings:</strong> Lettuce, Tomato, Cheese</p>
+    <p><strong>Price:</strong> ₹180</p>
+  </div>
+
+  <div data-role="popup" id="popupIceCream" class="ui-content popup-content" data-theme="a">
+    <h3>Ice Cream</h3>
+    <p><strong>Description:</strong> Cold and creamy vanilla ice cream</p>
+    <p><strong>Toppings:</strong> Chocolate Chips, Nuts</p>
+    <p><strong>Price:</strong> ₹120</p>
+  </div>
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- 🔸 What is jQuery Mobile?
+A mobile-first UI framework that uses HTML5 attributes and jQuery to build responsive, touch-friendly websites for mobile.
+
+🔸 Key Features Used:
+| Feature       | jQuery Mobile Element           | Explanation                     |
+| ------------- | ------------------------------- | ------------------------------- |
+| Header/Footer | `data-role="header"` / `footer` | For top and bottom bars         |
+| List Items    | `data-role="listview"`          | To list food items with search  |
+| Popups        | `data-role="popup"`             | Opens a modal with food details |
+| Search Filter | `data-filter="true"`            | Enables real-time filtering     |
+| Transitions   | `data-transition="pop"`         | Adds animation to popup         |
+
+
+🔸 Sample Viva Questions
+Q: Why did you use jQuery Mobile here?
+A: It’s specifically designed for mobile-friendly websites with built-in responsive UI components.
+
+Q: What is data-rel="popup" used for?
+A: It links the list item to a popup dialog/modal.
+
+Q: How does the search bar work?
+A: data-filter="true" and data-input="#search" connect the input with the list for filtering.
+
+Q: Can jQuery Mobile work without jQuery?
+A: No, it depends on jQuery. That’s why we include both libraries. -->

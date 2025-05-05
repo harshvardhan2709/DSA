@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Software IT Solutions | Your Partner in Innovation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        /* Hero Section */
+        .hero {
+            background: url('/images/background_img.avif') no-repeat center center/cover;
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-size: cover;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+        }
+        .hero .btn-primary {
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            background-color: #007bff;
+            border: none;
+        }
+        .hero .btn-primary:hover {
+            background-color: #0056b3;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        .services h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+        .service-item {
+            text-align: center;
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        .service-item h4 {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+        .service-item p {
+            font-size: 1rem;
+        }
+
+        /* testimonials Section */
+        html {
+            scroll-padding-top: 80px; /* Adjust for fixed navbar */
+            scroll-behavior: smooth; /* Enables smooth scrolling */
+        }
+
+        /* Ensures testimonials layout is responsive */
+            .testimonial-item {
+            min-height: 250px; /* Prevents content shift */
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: #ffffff;
+        }
+        .contact h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-label {
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">IT Solutions</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container text-center">
+            <h1>Your Trusted IT Partner</h1>
+            <p>Innovative Software Solutions for Your Business Growth</p>
+            <a href="#services" class="btn btn-primary">Discover Our Services</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Expertise</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <img src="/images/service 1.png" alt="Custom Software Development" class="img-fluid mb-3">
+                        <h4>Custom Software Development</h4>
+                        <p>We build tailored software solutions to meet your unique business needs, helping you stay ahead in the market.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <img src="/images/service 2.avif" alt="Web & Mobile App Development" class="img-fluid mb-3">
+                        <h4>Web & Mobile App Development</h4>
+                        <p>Responsive, scalable, and intuitive apps designed to enhance user experience across all platforms.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <img src="/images/service 3.jpg" alt="Cloud Solutions" class="img-fluid mb-3">
+                        <h4>Cloud Solutions</h4>
+                        <p>Leverage the power of the cloud to scale your operations, increase efficiency, and enhance security.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">What Our Clients Say</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="testimonial-item text-center p-4 shadow-sm bg-white rounded">
+                    <img src="/images/testimonial1.jpg" alt="Client 1" class="rounded-circle mb-3" width="100" height="100">
+                    <h5>John Doe</h5>
+                    <p class="text-muted">CEO, Tech Solutions</p>
+                    <p>"The team at IT Solutions delivered a cutting-edge software solution that boosted our efficiency and streamlined our operations. Highly recommended!"</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="testimonial-item text-center p-4 shadow-sm bg-white rounded">
+                    <img src="/images/testimonial2.jpg" alt="Client 2" class="rounded-circle mb-3" width="100" height="100">
+                    <h5>Jane Smith</h5>
+                    <p class="text-muted">Founder, Startup Hub</p>
+                    <p>"Their web and mobile app development services exceeded our expectations. The user experience is seamless, and our customers love it!"</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="testimonial-item text-center p-4 shadow-sm bg-white rounded">
+                    <img src="/images/testimonial3.webp" alt="Client 3" class="rounded-circle mb-3" width="100" height="100">
+                    <h5>Michael Lee</h5>
+                    <p class="text-muted">CTO, Cloud Enterprises</p>
+                    <p>"Thanks to their cloud solutions, our business has scaled effortlessly. Their expertise and support are unparalleled!"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form class="contact-form">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 IT Solutions. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

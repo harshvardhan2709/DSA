@@ -1,0 +1,45 @@
+
+Experiment 2A
+•	Git clone {repo link}
+•	cd path/to/repo name
+•	git add .
+•	git commit -m "Added files"
+•	git push origin main
+
+Aim of the Experiment
+To understand and demonstrate the process of version control using Git and GitHub, by creating a repository, pushing code to GitHub, and managing changes through Git commands.
+
+Git
+•	What is it?: Git is a version control system that helps you track changes in your files and collaborate with others.
+•	Main purpose: It lets you manage code versions, revert changes, and work on different versions of a project.
+•	How it works: You can commit changes, branch out to work on new features, and merge changes back into the main codebase.
+GitHub
+•	What is it?: GitHub is a platform that hosts Git repositories online, allowing you to store your code in the cloud and collaborate with others.
+•	Main purpose: It provides a remote space for your code, allowing multiple people to work together on the same project.
+•	How it works: You can create a repository, push changes to the cloud, and pull others' changes into your project.
+1.	What is version control, and why is it important?
+o	Version control is the management of changes to documents, programs, and other information stored as computer files. It is important because it helps track and manage changes in code over time, supports collaboration, and provides a history of modifications.
+2.	What is the difference between git clone and git pull?
+o	git clone creates a local copy of a remote repository, while git pull updates an existing local repository with changes from the remote repository.
+3.	What is a Git commit?
+o	A commit is a snapshot of the project at a particular point in time. It represents a set of changes that are saved in the repository with a message describing what was changed.
+4.	Explain the command git push origin main.
+o	git push uploads local commits to the remote repository. origin refers to the remote repository (GitHub), and main is the branch where the changes are being pushed.
+5.	What happens if you forget to commit your changes?
+o	If you don’t commit, your changes will not be recorded in Git’s version history and will not be pushed to GitHub.
+6.	What is the purpose of git add .?
+o	git add . stages all the changes made to files in the current directory and its subdirectories, preparing them for the next commit.
+7.	What is a GitHub repository?
+o	A GitHub repository is a cloud-based location where you can store and manage your Git projects. It also allows others to collaborate on your project.
+8.	  What is the difference between Git and GitHub?
+•	Git is a version control system for managing code locally, while GitHub is an online platform for hosting and managing Git repositories.
+9.	What is a branch in Git?
+•	A branch is a separate line of development in a project. It allows you to make changes independently without affecting the main codebase (usually the main or master branch).
+10.	 What is a pull request in GitHub?
+•	A pull request is a request to merge changes from one branch into another. It is commonly used to propose changes in a project, especially in collaborative development.
+11.	 What is the difference between git pull and git push?
+•	git pull fetches changes from the remote repository and merges them into your local repository. git push sends your local changes to the remote repository on GitHub.
+12.	What is a commit?
+•	A commit is a snapshot of the changes you’ve made in your project. It is a record of your work at a specific point in time, and each commit has a unique identifier.
+
+

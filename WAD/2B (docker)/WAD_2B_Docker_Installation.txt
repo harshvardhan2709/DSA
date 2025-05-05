@@ -1,0 +1,233 @@
+1. Docker Installation :-
+
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2. Add the docker repository to Apt sources:
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+
+sudo apt-get update
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. Install Docker Engine :-
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4. Run Docker:-
+
+sudo docker run hello-world
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+5. Docker Commands:-
+ 
+docker --help
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+6. Install Docker Packages:-
+
+sudo apt install apt-transport-https ca-certificates curl gnupg lsb-release fuse -y
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+7. Docker Desktop SetUp:-
+
+cd ~/Downloads
+
+wget https://desktop.docker.com/linux/main/amd64/docker-desktop-4.30.0-amd64.deb
+
+sudo apt install ./docker-desktop-4.30.0-amd64.deb
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#NOW GO TO VS CODE
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+8. CREATE Demo APP
+
+create "Dockerfile" and "docker-compose.yml" and "index.html"....in vs code in same folder
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+9. Inside dockerfile paste :-
+
+(Dockerfile code)
+
+# Use official Nginx base image
+FROM nginx:alpine
+
+# Remove default Nginx static assets
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copy your HTML files to Nginx web folder
+COPY index.html /usr/share/nginx/html/
+
+# Expose port 80
+EXPOSE 80
+
+# Start Nginx when container runs
+CMD ["nginx", "-g", "daemon off;"]
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+10. inside docker .yml file paste :-
+
+(docker-compose.yml code)
+
+version: "3.8"
+
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    container_name: static-html-site
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+11. To build -
+
+sudo docker-compose up --build
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+12. Open Docker Desktop 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+13. GO to containers
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+14. Open Docker Terminal
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+15. Inside Docker terminal :-
+
+cd ///your_folder_path
+docker build -t custom-nginx .
+docker run -d -p 8080:80 --name custom-nginx-container custom-nginx
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--END--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Experiment 2B
+
+Aim: Got it! Let’s walk through your web application development experiment and explain it from the ground up — including what Docker is, why we use it, and what each step in your setup means in that context.
+________________________________________
+🚢 What is Docker?
+Docker is a platform that allows developers to package applications and their dependencies into a lightweight, portable unit called a container.
+🔑 Key Concepts:
+•	Container: A self-contained environment that includes the app + all its dependencies (like a lightweight virtual machine).
+•	Image: A snapshot of a container (like a template or blueprint).
+•	Dockerfile: A script to build a Docker image.
+•	Docker Compose: A tool to manage multi-container setups using a YAML configuration file.
+________________________________________
+🧪 Your Experiment Explained
+🔧 Part 1: Install Docker
+You install Docker on your system so you can start building and running containers.
+•	apt-get update – Updates your system’s package list.
+•	install commands – Install required packages to get Docker up and running.
+•	You also download the GPG key and add Docker’s official repository to ensure secure and up-to-date Docker installations.
+________________________________________
+🐳 Part 2: Test Docker Works
+sudo docker run hello-world
+This runs a test container that prints a message if Docker is working correctly.
+________________________________________
+🖥️ Part 3: Install Docker Desktop
+Docker Desktop provides a graphical interface to manage containers visually — useful for monitoring and interacting with containers without using the command line all the time.
+________________________________________
+💻 Part 4: Create a Web Application
+In VS Code, you create:
+•	Dockerfile: Tells Docker how to build your app.
+•	docker-compose.yml: Automates running your app.
+•	index.html: A simple HTML page (static website).
+________________________________________
+🧱 What Your Dockerfile Does:
+FROM nginx:alpine
+RUN rm -rf /usr/share/nginx/html/*
+COPY index.html /usr/share/nginx/html/
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+This builds an image:
+•	Based on the lightweight nginx web server on Alpine Linux
+•	Clears default files
+•	Adds your HTML file
+•	Runs the server on port 80
+➡️ You now have a container that serves a static website.
+________________________________________
+🔗 What docker-compose.yml Does:
+version: "3.8"
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    container_name: static-html-site
+This automates building and running your Docker container:
+•	Exposes your website on your local machine’s port 8080
+•	Runs the web server using the Dockerfile you wrote
+________________________________________
+🛠️ How You Run It:
+sudo docker-compose up --build
+Builds and starts the web application — open a browser and go to http://localhost:8080 to see your site.
+________________________________________
+🧠 Why This Experiment is Useful
+•	💡 Teaches containerization — a fundamental DevOps skill
+•	🧹 Keeps your environment clean (no manual setup for NGINX, etc.)
+•	📦 Makes your app portable (can run on any system with Docker)
+
+
+
+
+
+

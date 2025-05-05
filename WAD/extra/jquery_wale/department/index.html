@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Department Info</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- jQuery Mobile CSS and JS -->
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  <style>
+    /* Flexbox layout for the department buttons */
+    .department-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; /* Ensure space between buttons */
+      gap: 10px; /* Optional gap between buttons */
+    }
+
+    .department-button {
+      font-size: 18px;
+      padding: 20px;
+      text-align: center;
+      flex: 1 0 19%; /* Each button takes up 19% of the width */
+      box-sizing: border-box; /* Ensure padding doesn't affect width */
+    }
+
+    .department-button a {
+      display: block;
+      height: 100%;
+      text-decoration: none;
+    }
+
+    /* Header and Footer styles */
+    .ui-header, .ui-footer {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Department Grid Page -->
+<div data-role="page" id="home">
+
+  <!-- Header -->
+  <div data-role="header" data-position="fixed">
+    <h1>Department Names</h1>
+  </div>
+
+  <!-- Content: Grid of Buttons -->
+  <div data-role="content">
+    <div class="department-grid">
+      <!-- IT Department Button -->
+      <div class="department-button">
+        <a href="#ITPage" class="ui-btn" data-transition="slide">IT</a>
+      </div>
+      <!-- COMP Department Button -->
+      <div class="department-button">
+        <a href="#COMPPage" class="ui-btn" data-transition="slide">COMP</a>
+      </div>
+      <!-- ETC Department Button -->
+      <div class="department-button">
+        <a href="#ETCPage" class="ui-btn" data-transition="slide">ETC</a>
+      </div>
+      <!-- MECH Department Button -->
+      <div class="department-button">
+        <a href="#MECHPage" class="ui-btn" data-transition="slide">MECH</a>
+      </div>
+      <!-- ELECT Department Button -->
+      <div class="department-button">
+        <a href="#ELECTPage" class="ui-btn" data-transition="slide">ELECT</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div data-role="footer" data-position="fixed">
+    <h4>&copy; 2025 Department Info</h4>
+  </div>
+
+</div>
+
+<!-- IT Department Info Page -->
+<div data-role="page" id="ITPage">
+  <div data-role="header" data-position="fixed">
+    <h1>IT Department</h1>
+  </div>
+
+  <div data-role="content">
+    <h3>Information about the IT department</h3>
+    <p>The IT department is responsible for technology infrastructure, computer systems, and software development.</p>
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+    <a href="#home" class="ui-btn">Back</a>
+  </div>
+</div>
+
+<!-- COMP Department Info Page -->
+<div data-role="page" id="COMPPage">
+  <div data-role="header" data-position="fixed">
+    <h1>COMP Department</h1>
+  </div>
+
+  <div data-role="content">
+    <h3>Information about the COMP department</h3>
+    <p>The COMP department focuses on computer science, algorithms, and programming.</p>
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+    <a href="#home" class="ui-btn">Back</a>
+  </div>
+</div>
+
+<!-- ETC Department Info Page -->
+<div data-role="page" id="ETCPage">
+  <div data-role="header" data-position="fixed">
+    <h1>ETC Department</h1>
+  </div>
+
+  <div data-role="content">
+    <h3>Information about the ETC department</h3>
+    <p>The ETC department focuses on electronics and telecommunications.</p>
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+    <a href="#home" class="ui-btn">Back</a>
+  </div>
+</div>
+
+<!-- MECH Department Info Page -->
+<div data-role="page" id="MECHPage">
+  <div data-role="header" data-position="fixed">
+    <h1>MECH Department</h1>
+  </div>
+
+  <div data-role="content">
+    <h3>Information about the MECH department</h3>
+    <p>The MECH department specializes in mechanical engineering and design.</p>
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+    <a href="#home" class="ui-btn">Back</a>
+  </div>
+</div>
+
+<!-- ELECT Department Info Page -->
+<div data-role="page" id="ELECTPage">
+  <div data-role="header" data-position="fixed">
+    <h1>ELECT Department</h1>
+  </div>
+
+  <div data-role="content">
+    <h3>Information about the ELECT department</h3>
+    <p>The ELECT department focuses on electrical engineering and power systems.</p>
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+    <a href="#home" class="ui-btn">Back</a>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+<!-- 
+
+
+### Simple Explanation of the Experiment:
+
+In this experiment, we created a **department information page** using **jQuery Mobile**, **HTML**, **CSS**, and **JavaScript**. The goal is to display department names (like IT, COMP, etc.) as clickable buttons. When a user clicks a button, they are redirected to a new page with detailed information about that department.
+
+---
+
+### Key Features:
+
+1. **Department Buttons**:
+
+   * Five department buttons (IT, COMP, ETC, MECH, ELECT) are arranged in a **5-column grid** using **Flexbox**.
+   * Each button links to a respective page displaying department info.
+
+2. **jQuery Mobile**:
+
+   * We used jQuery Mobile to make the page **responsive** and **mobile-friendly**.
+   * Page transitions happen with a smooth **slide effect** when navigating between pages.
+
+3. **CSS Flexbox**:
+
+   * Flexbox ensures the buttons are spaced evenly in a row and are **responsive** across different screen sizes.
+
+4. **Back Button**:
+
+   * Each department page includes a **Back button** to return to the home page.
+
+---
+
+### Steps:
+
+1. **Home Page**: Displays department buttons.
+2. **Department Pages**: Each department has its own page with detailed info.
+3. **Navigation**: Clicking a button takes you to the department page; a Back button brings you back.
+
+---
+
+### How it Works:
+
+* We use **Flexbox** to make a 5-column grid for the department buttons.
+* **jQuery Mobile** handles smooth page transitions and responsiveness.
+* **CSS** is used for layout and styling, ensuring the page looks good on any device.
+
+---
+
+This experiment demonstrates how to create an interactive, mobile-friendly web app with jQuery Mobile and Flexbox.
+
+
+
+
+
+| **Feature**                  | **Description**                                     | **Code Example**                                       |
+| ---------------------------- | --------------------------------------------------- | ------------------------------------------------------ |
+| **Page Transitions**         | Smooth animations between pages.                    | `<div data-role="page" data-transition="slide">`       |
+| **Page Containers**          | Defines a page in jQuery Mobile.                    | `<div data-role="page" id="ITPage">`                   |
+| **Header and Footer**        | Defines header and footer sections.                 | `<div data-role="header">`, `<div data-role="footer">` |
+| **Buttons (UI Styling)**     | Styles links as mobile-friendly buttons.            | `<a href="#ITPage" class="ui-btn">IT</a>`              |
+| **Responsive Design**        | Automatically adapts layout for mobile and desktop. | Automatic adjustment for screen sizes.                 |
+| **Navigation Between Pages** | Links to navigate between pages.                    | `<a href="#ITPage">`                                   | -->
