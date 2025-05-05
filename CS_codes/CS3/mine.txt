@@ -1,0 +1,150 @@
+#Bash
+sudo apt update
+sudo apt install python3-pip
+
+pip install pandas scikit-learn imbalanced-learn jupyter
+
+⚠️ If you're using pip3, use:
+
+bash
+pip3 install pandas scikit-learn imbalanced-learn jupyter
+
+
+#code to save in txt file
+
+# Step 1: Import Required Libraries
+import pandas as pd
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.metrics import accuracy_score, classification_report
+from imblearn.under_sampling import RandomUnderSampler
+
+# Step 2: Load the Dataset
+print("Loading dataset...")
+data_path = "/home/comp53/Documents/archive/spam_ham_dataset.csv"  # Change path if needed
+spam_mail = pd.read_csv(data_path)
+
+# Step 3: Preprocess Data
+print("Preprocessing data...")
+spam_mail = spam_mail.drop(columns=["Unnamed: 0"])
+print("Missing values:\n", spam_mail.isnull().sum())
+print("Original distribution:\n", spam_mail['label'].value_counts())
+
+# Step 4: Balance the Dataset using Undersampling
+X = spam_mail['text']
+y = spam_mail['label_num']
+undersampler = RandomUnderSampler(random_state=42)
+X_resampled, y_resampled = undersampler.fit_resample(X.values.reshape(-1, 1), y)
+balanced_data = pd.DataFrame({'text': X_resampled.flatten(), 'label_num': y_resampled})
+print("Balanced distribution:\n", balanced_data['label_num'].value_counts())
+
+# Step 5: Vectorize Text using TF-IDF
+print("Vectorizing email text...")
+vectorizer = TfidfVectorizer(max_features=5000)
+X_features = vectorizer.fit_transform(balanced_data['text']).toarray()
+y_labels = balanced_data['label_num']
+
+# Step 6: Split Data into Training and Testing Sets
+X_train, X_test, y_train, y_test = train_test_split(X_features, y_labels, test_size=0.2, random_state=42)
+print(f"Training set size: {len(X_train)}, Testing set size: {len(X_test)}")
+
+# Step 7: Train the Naïve Bayes Model
+print("Training Naïve Bayes model...")
+model = MultinomialNB()
+model.fit(X_train, y_train)
+
+# Step 8: Evaluate the Model
+y_pred = model.predict(X_test)
+print("Accuracy:", accuracy_score(y_test, y_pred) * 100)
+print("Classification Report:\n", classification_report(y_test, y_pred))
+
+# Step 9: Test Custom Inputs
+def predict_email(text):
+    input_vector = vectorizer.transform([text]).toarray()
+    result = model.predict(input_vector)
+    return "Spam" if result[0] == 1 else "Ham"
+
+print("\n--- Custom Email Predictions ---")
+email1 = "Congratulations! You won a free iPhone. Click here to claim now."
+email2 = "Hey, let's meet for coffee tomorrow."
+email3 = "You almost missed this opportunity!"
+email4 = "I am confirming my participation to this bootcamp"
+
+print(f"Email 1: {predict_email(email1)}")
+print(f"Email 2: {predict_email(email2)}")
+print(f"Email 3: {predict_email(email3)}")
+print(f"Email 4: {predict_email(email4)}")
+
+
+6.Open terminal
+
+Navigate to your folder (where Python file is saved):
+
+bash
+Copy
+Edit
+cd /path/to/your/folder
+Run the script:
+
+bash
+
+python3 spam_mail_detection.py
+
+python3 spam_mail_detection.py
+
+
+
+
+
+Theory:-
+
+✅ Sample Viva Questions You May Be Asked
+Question	   Simple Answer
+What is spam?	   Unwanted or fake emails sent in bulk
+
+What is the aim of this experiment?	To classify emails as spam or not using Python and ML
+
+Which dataset is used?	spam_ham_dataset.csv
+
+What is the use of TF-IDF?	It converts text into numerical format
+
+Why Naïve Bayes?	It is fast and best for text data
+
+What is vectorization?	Converting words into numbers for ML
+
+What is the output of your model?	Whether a given email is "Spam" or "Ham"
+
+What is accuracy?	Percentage of correct predictions
+
+What is label encoding?	Converting spam/ham into 1/0 for ML model
+
+*
+Library	Usage
+pandas	To load and manage the dataset (csv file), and do data analysis like viewing rows, dropping columns, checking for nulls, etc.
+
+imblearn.under_sampling.RandomUnderSampler	To balance the dataset by reducing the number of ham (non-spam) emails so spam and ham are equal.
+
+sklearn.feature_extraction.text.TfidfVectorizer	Converts email text into numerical values (vectors) using TF-IDF method, so the ML model can understand it.
+
+sklearn.model_selection.train_test_split	To split the dataset into training and testing sets. We train the model on training data and test its accuracy on testing data.
+
+sklearn.naive_bayes.MultinomialNB	This is the Naïve Bayes classifier, best for text classification. It is the actual ML model used here.
+
+sklearn.metrics (accuracy_score, classification_report)	To evaluate the performance of the model using accuracy, precision, recall, and F1-score.
+
+
+
+
+
+
+
+✅ 6. Evaluation Metrics
+Metric	Meaning
+Accuracy	Overall correct predictions
+Precision	How many predicted spams are truly spam
+Recall	How many actual spams were detected
+F1 Score	Harmonic mean of precision and recall
+
+
+
